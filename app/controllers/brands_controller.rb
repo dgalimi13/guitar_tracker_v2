@@ -19,6 +19,11 @@ class BrandsController < ApplicationController
         erb :"brands/show.html"
     end
 
+    get '/brands/:id' do 
+        @brand = current_user.brands.find(params[:id])
+        erb :"brands/show.html"
+    end
+
     post '/brands' do 
         if params[:name] != ""
         @brand = Brand.new
