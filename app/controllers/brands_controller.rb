@@ -24,6 +24,12 @@ class BrandsController < ApplicationController
         erb :"brands/show.html"
     end
 
+    patch "/brands/:id" do
+        @brand = current_user.brands.find(params[:id])
+        @brand.update(params[:brand])
+        redirect to "/brands/#{ @brand.id }"
+    end
+
     post '/brands' do 
         if params[:name] != ""
         @brand = Brand.new
