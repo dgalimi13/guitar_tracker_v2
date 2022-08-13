@@ -3,7 +3,7 @@ class CreateGuitars < ActiveRecord::Migration[6.1]
     create_table :guitars do |t|
       t.string :type
       t.string :model
-      t.string :brand 
+      t.string :brand_id 
 
       t.timestamps null: false 
     end 
