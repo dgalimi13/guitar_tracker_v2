@@ -14,12 +14,13 @@ ActiveRecord::Schema.define(version: 2022_08_13_131456) do
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
+    t.string "user_id"
   end
 
   create_table "guitars", force: :cascade do |t|
     t.string "type"
     t.string "model"
-    t.string "brand"
+    t.string "brand_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
