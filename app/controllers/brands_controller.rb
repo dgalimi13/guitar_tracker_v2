@@ -1,8 +1,8 @@
 class BrandsController < ApplicationController
     
-    get '/consoles' do
-        @consoles = current_user.consoles
-        erb :"consoles/index.html"
+    get '/brands' do
+        @brands = current_user.brands
+        erb :"brands/index.html"
     end
         
 
