@@ -9,9 +9,9 @@ class BrandsController < ApplicationController
         erb :"brands/new.html"
     end
 
-    get "/consoles/:id/edit" do
-        @console = current_user.consoles.find(params[:id])
-        erb :"consoles/edit.html"
+    get "/brands/:id/edit" do
+        @brand = current_user.brands.find(params[:id])
+        erb :"brands/edit.html"
     end
 
     post '/brands' do 
