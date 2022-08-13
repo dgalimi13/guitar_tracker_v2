@@ -1,0 +1,8 @@
+<h1> Your Consoles </h1> 
+
+<ul> 
+    <% @consoles.each do |console| %> 
+        <li><a href="/consoles/<%= console.id %>"><%= console.name %></a></li>
+        <% end %>
+</ul>    
+
