@@ -9,6 +9,11 @@ class BrandsController < ApplicationController
         erb :"brands/new.html"
     end
 
+    get "/consoles/:id/edit" do
+        @console = current_user.consoles.find(params[:id])
+        erb :"consoles/edit.html"
+    end
+
     post '/brands' do 
         if params[:name] != ""
         @brand = Brand.new
