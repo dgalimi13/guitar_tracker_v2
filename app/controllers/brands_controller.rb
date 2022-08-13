@@ -1,4 +1,4 @@
-class ConsolesController < ApplicationController
+class BrandsController < ApplicationController
     
 
         
