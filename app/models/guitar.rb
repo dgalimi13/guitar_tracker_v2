@@ -1,4 +1,4 @@
-class Game < ActiveRecord::Base 
+class Guitar < ActiveRecord::Base 
     belongs_to :brand
 
 end
