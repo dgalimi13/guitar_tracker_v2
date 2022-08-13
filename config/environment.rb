@@ -12,3 +12,9 @@ database_config = {
         :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
     }
 }
+
+set :database, database_config
+
+require 'rack-flash'
+require './app/controllers/application_controller'
+require_all 'app'
