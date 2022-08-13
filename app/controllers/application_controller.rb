@@ -8,11 +8,28 @@ class ApplicationController < Sinatra::Base
         
         set :public_folder, 'public'
         set :views, 'app/views'
-      end
+    end
 
-      get "/" do 
+    get "/" do 
         erb :welcome 
-      end 
+    end 
+
+    helpers do
+        def logged_in?
+            !!current_user
+        end
+    
+        def current_user
+          @user ||= User.find(session[:user_id]) if session[:user_id]
+        end
+    end
+    
+    def authentication_required
+        if !logged_in?
+          flash[:notice] = "You must be logged in."
+          redirect '/'
+        end
+    end
   
 end
   
