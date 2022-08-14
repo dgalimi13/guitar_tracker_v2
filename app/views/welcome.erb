@@ -1,1 +1,13 @@
 Welcome to Guitar Tracker v2!
+
+<nav>
+          <% if logged_in? %>
+          Logged in as: <%= current_user.email %> |
+          <a href="/brands">Your Brands</a>  |
+          <a href="/brands/new">New Brand</a> |
+          <a href="/logout">Logout</a>
+          <% else %>
+          <a href="/register">Register</a> |
+          <a href="/login">Login</a>
+          <% end %>
+</nav> 
